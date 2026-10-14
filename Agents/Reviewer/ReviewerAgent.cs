@@ -67,9 +67,10 @@ O orquestrador cumpriu 100% da cadeia de montagem digital, entregando documenta√
         var reviewPath = await context.SaveAgentArtifactAsync("docs/review.md", reviewContent, Name);
         generatedFiles.Add(reviewPath);
 
-        // 2. Atualiza estado e salva project.json
+        // 2. Atualiza metadados e salva project.json
+        // Nota: o status final ("COMPLETED") √© responsabilidade exclusiva do SiteOrchestrator.
+        // O ReviewerAgent apenas registra os metadados de auditoria.
         ConsoleLogger.Step("Consolidando metadados e salvando project.json...");
-        context.State.Status = "Completed";
         context.State.Metadata["QualityScore"] = score.ToString("F1");
         context.State.Metadata["AuditedBy"] = "ReviewerAgent";
         context.State.Metadata["HumanSupervisionRequired"] = "true";

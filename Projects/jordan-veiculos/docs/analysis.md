@@ -3,7 +3,7 @@
 **Segmento:** automotivo  
 **URL de Referência / Atual:** https://www.jordanveiculos.com  
 **Nível de Projeto:** profissional  
-**Data da Análise:** 07/10/2026 16:57:01 UTC  
+**Data da Análise:** 14/10/2026 16:23:39 UTC  
 
 ---
 

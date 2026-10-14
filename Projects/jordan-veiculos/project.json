@@ -10,8 +10,8 @@
     "Reviewer"
   ],
   "FailedSteps": [],
-  "CreatedAt": "2026-10-07T16:57:00.9418439Z",
-  "UpdatedAt": "2026-10-07T16:57:04.4383977Z",
+  "CreatedAt": "2026-10-14T16:23:38.9804595Z",
+  "UpdatedAt": "2026-10-14T16:23:41.9865326Z",
   "Specification": {
     "cliente": "Jordan Ve\u00EDculos",
     "urlAtual": "https://www.jordanveiculos.com",
@@ -26,8 +26,8 @@
       "AgentName": "Planner",
       "Step": "Planejamento e An\u00E1lise Estrat\u00E9gica",
       "Status": "Success",
-      "Timestamp": "2026-10-07T16:57:01.5497651Z",
-      "DurationSeconds": 0.3638571,
+      "Timestamp": "2026-10-14T16:23:39.5862939Z",
+      "DurationSeconds": 0.3291758,
       "ProducedFiles": [
         "docs/analysis.md",
         "docs/requirements.md",
@@ -39,8 +39,8 @@
       "AgentName": "Designer",
       "Step": "Design UI/UX e Design System",
       "Status": "Success",
-      "Timestamp": "2026-10-07T16:57:02.4835104Z",
-      "DurationSeconds": 0.31312,
+      "Timestamp": "2026-10-14T16:23:40.1392504Z",
+      "DurationSeconds": 0.3063272,
       "ProducedFiles": [
         "docs/design.md",
         "docs/components.md"
@@ -51,8 +51,8 @@
       "AgentName": "Developer",
       "Step": "Desenvolvimento Frontend e Arquitetura Web",
       "Status": "Success",
-      "Timestamp": "2026-10-07T16:57:03.1636402Z",
-      "DurationSeconds": 0.3752863,
+      "Timestamp": "2026-10-14T16:23:40.7218502Z",
+      "DurationSeconds": 0.3672017,
       "ProducedFiles": [
         "public/favicon.svg",
         "src/index.html",
@@ -66,8 +66,8 @@
       "AgentName": "Tester",
       "Step": "Garantia de Qualidade (QA) \u0026 Valida\u00E7\u00F5es T\u00E9cnicas",
       "Status": "Success",
-      "Timestamp": "2026-10-07T16:57:03.8505481Z",
-      "DurationSeconds": 0.3361877,
+      "Timestamp": "2026-10-14T16:23:41.3030795Z",
+      "DurationSeconds": 0.323545,
       "ProducedFiles": [
         "tests/site-checks.json",
         "docs/qa-report.md"
@@ -78,8 +78,8 @@
       "AgentName": "Reviewer",
       "Step": "Revis\u00E3o Executiva \u0026 Auditoria Final",
       "Status": "Success",
-      "Timestamp": "2026-10-07T16:57:04.4383874Z",
-      "DurationSeconds": 0.3168426,
+      "Timestamp": "2026-10-14T16:23:41.9865203Z",
+      "DurationSeconds": 0.3056863,
       "ProducedFiles": [
         "docs/review.md",
         "C:\\Users\\joaop\\OneDrive\\Desktop\\SiteFactory\\Projects\\jordan-veiculos\\project.json"
@@ -107,6 +107,6 @@
     "QualityScore": "9,8",
     "AuditedBy": "ReviewerAgent",
     "HumanSupervisionRequired": "true",
-    "TotalPipelineDurationSeconds": "3,75"
+    "TotalPipelineDurationSeconds": "3,27"
   }
 }
