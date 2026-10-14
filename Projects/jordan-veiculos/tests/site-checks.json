@@ -1,0 +1,85 @@
+{
+  "Timestamp": "2026-10-07T16:57:03.8262642Z",
+  "TotalTests": 11,
+  "Passed": 11,
+  "PassRate": "100,0%",
+  "Tests": [
+    {
+      "Id": "FILE-src-index-html",
+      "Category": "Estrutura de Arquivos",
+      "Description": "Exist\u00EAncia do arquivo \u0027src/index.html\u0027",
+      "Passed": true,
+      "Details": "Arquivo presente (15856 bytes)"
+    },
+    {
+      "Id": "FILE-src-styles-main-css",
+      "Category": "Estrutura de Arquivos",
+      "Description": "Exist\u00EAncia do arquivo \u0027src/styles/main.css\u0027",
+      "Passed": true,
+      "Details": "Arquivo presente (14384 bytes)"
+    },
+    {
+      "Id": "FILE-src-scripts-app-js",
+      "Category": "Estrutura de Arquivos",
+      "Description": "Exist\u00EAncia do arquivo \u0027src/scripts/app.js\u0027",
+      "Passed": true,
+      "Details": "Arquivo presente (7552 bytes)"
+    },
+    {
+      "Id": "FILE-public-favicon-svg",
+      "Category": "Estrutura de Arquivos",
+      "Description": "Exist\u00EAncia do arquivo \u0027public/favicon.svg\u0027",
+      "Passed": true,
+      "Details": "Arquivo presente (468 bytes)"
+    },
+    {
+      "Id": "FILE-docs-development-md",
+      "Category": "Estrutura de Arquivos",
+      "Description": "Exist\u00EAncia do arquivo \u0027docs/development.md\u0027",
+      "Passed": true,
+      "Details": "Arquivo presente (2147 bytes)"
+    },
+    {
+      "Id": "SEO-H1-COUNT",
+      "Category": "SEO \u0026 Sem\u00E2ntica",
+      "Description": "Presen\u00E7a de exatamente um cabe\u00E7alho H1",
+      "Passed": true,
+      "Details": "Encontrado(s) 1 elemento(s) \u003Ch1\u003E na p\u00E1gina principal."
+    },
+    {
+      "Id": "SEO-METATAGS",
+      "Category": "SEO \u0026 Sem\u00E2ntica",
+      "Description": "Presen\u00E7a de metatags essenciais (viewport, description)",
+      "Passed": true,
+      "Details": "Viewport: OK, Description: OK"
+    },
+    {
+      "Id": "CSS-DESIGN-SYSTEM",
+      "Category": "CSS \u0026 Design Tokens",
+      "Description": "Declara\u00E7\u00E3o de tokens CSS no :root e vari\u00E1veis de cor",
+      "Passed": true,
+      "Details": "Vari\u00E1veis e design tokens configurados no :root"
+    },
+    {
+      "Id": "CSS-RESPONSIVE",
+      "Category": "Responsividade",
+      "Description": "Breakpoints responsivos com @media queries",
+      "Passed": true,
+      "Details": "Breakpoints responsivos detectados"
+    },
+    {
+      "Id": "JS-INTERACTIVITY",
+      "Category": "L\u00F3gica Interativa",
+      "Description": "Fun\u00E7\u00F5es de renderiza\u00E7\u00E3o din\u00E2mica de cat\u00E1logo e c\u00E1lculo de simulador",
+      "Passed": true,
+      "Details": "M\u00F3dulos de cat\u00E1logo e simulador presentes"
+    },
+    {
+      "Id": "LEADS-WHATSAPP",
+      "Category": "Convers\u00E3o de Vendas",
+      "Description": "Integra\u00E7\u00E3o direta de CTAs e formul\u00E1rios com WhatsApp",
+      "Passed": true,
+      "Details": "Links de redirecionamento din\u00E2mico wa.me configurados"
+    }
+  ]
+}

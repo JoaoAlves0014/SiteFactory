@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle with Glow Border -->
+  <circle cx="80" cy="80" r="76" fill="url(#bgGrad)" stroke="url(#accentGrad)" stroke-width="4" />
+  
+  <!-- Circuit & Tech Nodes Pattern -->
+  <circle cx="80" cy="80" r="58" stroke="rgba(255,255,255,0.08)" stroke-width="2" stroke-dasharray="4 6" />
+  <circle cx="80" cy="80" r="42" fill="rgba(99, 102, 241, 0.12)" />
+
+  <!-- Stylized Monogram / Avatar Icon -->
+  <path d="M52 108 L52 52 L78 52 C94 52 104 62 104 76 C104 90 94 100 78 100 L68 100 L68 108 Z" fill="url(#glowGrad)" />
+  <path d="M68 66 L77 66 C85 66 90 71 90 76 C90 81 85 86 77 86 L68 86 Z" fill="#0F172A" />
+  <circle cx="108" cy="108" r="10" fill="url(#accentGrad)" />
+  <circle cx="108" cy="108" r="4" fill="#FFFFFF" />
+</svg>

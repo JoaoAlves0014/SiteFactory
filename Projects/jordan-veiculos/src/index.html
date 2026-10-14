@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jordan Veículos - Concessionária de veículos seminovos selecionados e premium com garantia de procedência e financiamento facilitado.">
+  <meta name="theme-color" content="#0B0F19">
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg">
+  
+  <title>Jordan Veículos | Veículos Selecionados & Seminovos Premium</title>
+  
+  <!-- Tipografia do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Header / Barra de Navegação -->
+  <header class="navbar-header" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" id="brand-logo">
+        <span class="brand-icon">⚡</span>
+        <span class="brand-name">Jordan Veículos</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#estoque" class="nav-link">Estoque</a>
+        <a href="#simulador" class="nav-link">Simulador</a>
+        <a href="#diferenciais" class="nav-link">Diferenciais</a>
+        <a href="#depoimentos" class="nav-link">Depoimentos</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/5511999999999?text=Olá!+Gostaria+de+saber+mais+sobre+o+estoque+da+Jordan%20Ve%C3%ADculos" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="nav-cta-whatsapp">
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-pill">
+          <span class="badge-dot"></span>
+          <span>Novo Padrão em Veículos Premium</span>
+        </div>
+
+        <h1 class="hero-title">
+          Encontre o seu próximo carro com <span class="text-gradient">procedência e elegância</span>.
+        </h1>
+
+        <p class="hero-subtitle">
+          Veículos periciados com laudo cautelar 100% aprovado, garantia estendida e condições exclusivas de financiamento com taxas competitivas.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#estoque" class="btn btn-primary btn-lg" id="hero-btn-estoque">Explorar Estoque</a>
+          <a href="#simulador" class="btn btn-secondary btn-lg" id="hero-btn-simulador">Simular Financiamento</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">+1.200</span>
+            <span class="stat-label">Carros Entregues</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Laudo Aprovado</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">4.9 ★</span>
+            <span class="stat-label">Avaliação Google</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card-visual">
+        <div class="hero-visual-card">
+          <div class="card-badge-top">Destaque da Semana</div>
+          <div class="vehicle-illustration">
+            <svg viewBox="0 0 400 220" class="car-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="carGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#2563EB" />
+                  <stop offset="100%" stop-color="#1D4ED8" />
+                </linearGradient>
+                <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.4" />
+                  <stop offset="100%" stop-color="#2563EB" stop-opacity="0.1" />
+                </linearGradient>
+              </defs>
+              <rect x="20" y="20" width="360" height="180" rx="16" fill="url(#glowGrad)" />
+              <!-- Silhouette Car -->
+              <path d="M70 145 C90 145 110 135 130 115 L180 85 C200 75 250 75 275 88 L310 110 C330 120 345 140 345 145 L350 160 C350 165 340 170 330 170 L70 170 Z" fill="url(#carGrad)" />
+              <!-- Windows -->
+              <path d="M145 112 L185 86 C195 80 240 80 255 90 L285 112 Z" fill="#0B0F19" opacity="0.7" />
+              <!-- Headlights -->
+              <path d="M340 130 L350 135 L340 140 Z" fill="#F59E0B" />
+              <!-- Wheels -->
+              <circle cx="115" cy="170" r="22" fill="#0B0F19" stroke="#94A3B8" stroke-width="4" />
+              <circle cx="115" cy="170" r="10" fill="#F59E0B" />
+              <circle cx="295" cy="170" r="22" fill="#0B0F19" stroke="#94A3B8" stroke-width="4" />
+              <circle cx="295" cy="170" r="10" fill="#F59E0B" />
+            </svg>
+          </div>
+          <div class="hero-card-meta">
+            <h3>BMW 320i M Sport 2.0 Turbo</h3>
+            <p>2024 • 14.200 km • Automático</p>
+            <div class="hero-card-price">
+              <span class="price-tag">R$ 319.900</span>
+              <span class="price-sub">ou entrada + parcelas sob medida</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Estoque com Filtros -->
+  <section class="stock-section" id="estoque">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Estoque Selecionado</h2>
+        <p class="section-desc">Todos os veículos passam por rigorosa inspeção mecânica de 150 itens e possuem procedência garantida.</p>
+      </div>
+
+      <!-- Barra de Filtros e Busca -->
+      <div class="filter-controls" id="filter-bar">
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-category="todos">Todos (<span id="count-todos">6</span>)</button>
+          <button class="filter-btn" data-category="suv">SUVs (<span id="count-suv">2</span>)</button>
+          <button class="filter-btn" data-category="sedan">Sedans (<span id="count-sedan">2</span>)</button>
+          <button class="filter-btn" data-category="pickup">Pick-ups (<span id="count-pickup">1</span>)</button>
+          <button class="filter-btn" data-category="hatch">Hatchbacks (<span id="count-hatch">1</span>)</button>
+        </div>
+
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Buscar por modelo, marca ou ano..." aria-label="Buscar veículo">
+        </div>
+      </div>
+
+      <!-- Grid de Veículos -->
+      <div class="vehicle-grid" id="vehicle-grid">
+        <!-- Renderizado dinamicamente via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulador de Financiamento -->
+  <section class="simulator-section" id="simulador">
+    <div class="container">
+      <div class="simulator-card">
+        <div class="simulator-info">
+          <div class="badge-pill">Simulação Online</div>
+          <h2 class="simulator-title">Simule o Financiamento do seu Carro Novo</h2>
+          <p class="simulator-desc">
+            Sem compromisso. Escolha o valor aproximado, a entrada que deseja dar e o número de parcelas para ver a estimativa imediata.
+          </p>
+          <ul class="sim-benefits">
+            <li>✔ Parcerias com os maiores bancos (Santander, BV, Itaú, Bradesco)</li>
+            <li>✔ Taxas promocionais a partir de 0,99% a.m.</li>
+            <li>✔ Aprovação rápida e desburocratizada</li>
+          </ul>
+        </div>
+
+        <div class="simulator-form">
+          <div class="form-group">
+            <label for="sim-car-select">Escolha o Veículo:</label>
+            <select id="sim-car-select" class="form-control">
+              <!-- Populado via app.js -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sim-entry-range">Valor de Entrada: <strong id="entry-display">R$ 40.000</strong></label>
+            <input type="range" id="sim-entry-range" min="10000" max="250000" step="5000" value="40000" class="range-slider">
+          </div>
+
+          <div class="form-group">
+            <label>Número de Parcelas:</label>
+            <div class="installments-selector" id="installments-buttons">
+              <button type="button" class="inst-btn" data-months="24">24x</button>
+              <button type="button" class="inst-btn" data-months="36">36x</button>
+              <button type="button" class="inst-btn active" data-months="48">48x</button>
+              <button type="button" class="inst-btn" data-months="60">60x</button>
+            </div>
+          </div>
+
+          <div class="simulator-result-box">
+            <div class="result-label">Estimativa de Parcela Mensal:</div>
+            <div class="result-value" id="installment-result">R$ 2.450 / mês</div>
+            <div class="result-footnote">*Taxa estimada referencial. Sujeita a análise cadastral.</div>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-block" id="btn-send-simulation">
+            Solicitar Proposta com essa Parcela via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais e Garantias -->
+  <section class="differentiators-section" id="diferenciais">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Por que Comprar na Jordan Veículos?</h2>
+        <p class="section-desc">Transparência absoluta em cada etapa da negociação para sua total tranquilidade.</p>
+      </div>
+
+      <div class="diff-grid">
+        <div class="diff-card">
+          <div class="diff-icon">🔍</div>
+          <h3>Perícia Cautelar 100%</h3>
+          <p>Nenhum veículo do nosso estoque possui histórico de leilão, sinistro ou alteração estrutural.</p>
+        </div>
+
+        <div class="diff-card">
+          <div class="diff-icon">🛡️</div>
+          <h3>Garantia Mecânica Completa</h3>
+          <p>Garantia de motor e câmbio com suporte prioritário e oficina credenciada parceira.</p>
+        </div>
+
+        <div class="diff-card">
+          <div class="diff-icon">🔄</div>
+          <h3>Avaliação Justa na Troca</h3>
+          <p>Pagamos o valor justo pelo seu veículo usado com base no mercado real, facilitando a troca imediata.</p>
+        </div>
+
+        <div class="diff-card">
+          <div class="diff-icon">⚡</div>
+          <h3>Documentação Expressa</h3>
+          <p>Equipe de despachante dedicada para você sair com o carro rodando sem dores de cabeça burocráticas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos de Clientes -->
+  <section class="reviews-section" id="depoimentos">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Quem Comprou, Recomenda</h2>
+        <p class="section-desc">Confira o que nossos clientes dizem sobre o atendimento e a experiência.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Atendimento impecável! O processo de financiamento foi aprovado no mesmo dia e o carro estava exatamente conforme o anunciado."</p>
+          <div class="review-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <strong>Marcelo Rocha</strong>
+              <span>Comprou um Jeep Compass</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"A Jordan Veículos superou as expectativas. Avaliaram meu carro usado de forma honesta e a entrega foi super ágil."</p>
+          <div class="review-author">
+            <div class="author-avatar">CS</div>
+            <div>
+              <strong>Camila Silveira</strong>
+              <span>Comprou um Honda Civic</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Transparência do início ao fim. Mostraram todo o laudo pericial antes mesmo de fecharmos o negócio. Recomendo de olhos fechados!"</p>
+          <div class="review-author">
+            <div class="author-avatar">FA</div>
+            <div>
+              <strong>Fernando Albuquerque</strong>
+              <span>Comprou uma Toyota Hilux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Contato e Localização -->
+  <section class="contact-section" id="contato">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2 class="section-title">Venha Tomar um Café Conosco</h2>
+        <p class="contact-lead">Estamos prontos para atendê-lo em nosso showroom ou pelo WhatsApp com atendimento exclusivo.</p>
+
+        <div class="info-items">
+          <div class="info-item">
+            <span class="info-icon">📍</span>
+            <div>
+              <strong>Endereço do Showroom</strong>
+              <p>Av. das Américas, 4200 - Barra da Tijuca, RJ</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon">🕒</span>
+            <div>
+              <strong>Horário de Funcionamento</strong>
+              <p>Segunda a Sexta: 08:30 às 19:00 | Sábado: 09:00 às 17:00</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon">💬</span>
+            <div>
+              <strong>Atendimento Digital</strong>
+              <p>(11) 99999-9999 • contato@jordan-veiculos.com.br</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-action-box">
+        <h3>Atendimento Imediato</h3>
+        <p>Quer tirar dúvidas sobre algum modelo do estoque ou agendar um test-drive?</p>
+        <a href="https://wa.me/5511999999999?text=Olá!+Gostaria+de+agendar+uma+visita+na+Jordan%20Ve%C3%ADculos" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block btn-lg">
+          Iniciar Conversa no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer" id="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-icon">⚡</span>
+        <span class="brand-name">Jordan Veículos</span>
+        <p class="footer-tagline">Veículos selecionados com qualidade, garantia e procedência garantida.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#estoque">Estoque</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <div class="footer-legal">
+        <p>© 2026 Jordan Veículos. Todos os direitos reservados.</p>
+        <p class="powered-by">Desenvolvido sob medida por <strong>SiteFactory Orchestrator</strong>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante de WhatsApp -->
+  <a href="https://wa.me/5511999999999?text=Olá!+Gostaria+de+informações+sobre+o+estoque+da+Jordan%20Ve%C3%ADculos" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floating-whatsapp" aria-label="Conversar no WhatsApp">
+    <span>💬</span>
+  </a>
+
+  <!-- Script da Aplicação -->
+  <script src="scripts/app.js"></script>
+</body>
+</html>

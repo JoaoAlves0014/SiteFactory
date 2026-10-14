@@ -1,0 +1,25 @@
+{
+  "name": "automotivo-moderno",
+  "category": "automotivo",
+  "version": "1.0.0",
+  "recommendedSections": [
+    "header-navbar",
+    "hero-banner-showcase",
+    "quick-filter-bar",
+    "vehicle-catalog-grid",
+    "financing-simulator",
+    "trust-differentiators",
+    "customer-reviews",
+    "contact-location",
+    "footer-corporate"
+  ],
+  "defaultColors": {
+    "background": "#0B0F19",
+    "surface": "#131B2E",
+    "primary": "#E5A93C",
+    "primaryHover": "#F5BA4F",
+    "text": "#F8FAFC",
+    "textMuted": "#94A3B8",
+    "accent": "#2563EB"
+  }
+}

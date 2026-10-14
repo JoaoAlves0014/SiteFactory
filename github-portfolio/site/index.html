@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de João Pedro - Engenheiro de Software especializado em C#, .NET 8 e Orquestração de Agentes Autônomos de IA.">
+  <meta name="theme-color" content="#090D16">
+  <link rel="icon" type="image/svg+xml" href="public/avatar.svg">
+  
+  <title>João Alves | Engenheiro de Software & Arquiteto de IA</title>
+  
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles/portfolio.css">
+</head>
+<body>
+
+  <!-- Barra de Navegação -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand">
+        <img src="public/avatar.svg" alt="Avatar" class="brand-avatar">
+        <span class="brand-text">joao<span class="brand-dot">.dev</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#sitefactory" class="nav-link">SiteFactory</a>
+        <a href="#projetos" class="nav-link">Projetos</a>
+        <a href="#habilidades" class="nav-link">Habilidades</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contato" class="btn btn-primary btn-sm">Iniciar Conversa</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Construindo o futuro com Sistemas Multi-Agentes</span>
+        </div>
+
+        <h1 class="hero-title">
+          Engenharia de Software de Alta Performance & <span class="gradient-text">Orquestração de IA</span>.
+        </h1>
+
+        <p class="hero-description">
+          Desenvolvo arquiteturas robustas em <strong>C# (.NET 8)</strong> integradas a agentes autônomos. 
+          Minha abordagem une <strong>80–90% de automação de processos repetitivos</strong> à precisão da <strong>supervisão humana no VS Code</strong>.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#sitefactory" class="btn btn-primary btn-lg">Explorar SiteFactory</a>
+          <a href="https://github.com/JoaoAlves0014" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg" id="btn-github-hero">
+            <span>Ver no GitHub</span> ↗
+          </a>
+        </div>
+
+        <div class="tech-tags">
+          <span class="tag">C# / .NET 8</span>
+          <span class="tag">AI Multi-Agents</span>
+          <span class="tag">Clean Architecture</span>
+          <span class="tag">Git Automation</span>
+          <span class="tag">Vanilla Web</span>
+        </div>
+      </div>
+
+      <!-- Hero Terminal Card Interativo -->
+      <div class="hero-terminal-wrapper">
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">sitefactory-orchestrator.exe</span>
+          </div>
+          <div class="terminal-body" id="hero-terminal">
+            <div class="terminal-line"><span class="t-dim">$</span> dotnet run -- sample-project.json</div>
+            <div class="terminal-line t-cyan">[SiteFactory] Inicando esteira multi-agentes...</div>
+            <div class="terminal-line t-yellow">[1/5] Planner: Analisando requisitos e sitemap... <span class="t-green">✔</span></div>
+            <div class="terminal-line t-yellow">[2/5] Designer: Gerando tokens e layout Dark Luxury... <span class="t-green">✔</span></div>
+            <div class="terminal-line t-yellow">[3/5] Developer: Codificando HTML5, CSS e JS modular... <span class="t-green">✔</span></div>
+            <div class="terminal-line t-yellow">[4/5] Tester: 11/11 testes automatizados aprovados... <span class="t-green">✔</span></div>
+            <div class="terminal-line t-yellow">[5/5] Reviewer: Nota de entrega 9.8/10. <span class="t-green">✔</span></div>
+            <div class="terminal-line t-green"><span class="t-check">✔</span> Projeto finalizado com sucesso em 3.34s!</div>
+            <div class="terminal-line t-muted">Checkpoints Git registrados automaticamente.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destaque Especial: SiteFactory -->
+  <section class="section sitefactory-section" id="sitefactory">
+    <div class="container">
+      <div class="section-badge">Projeto Arquitetural</div>
+      <h2 class="section-title">SiteFactory: Orquestrador de Sites Multi-Agentes</h2>
+      <p class="section-subtitle">
+        Uma fábrica de sites desenvolvida em C# que substitui o trabalho repetitivo por uma cadeia sequencial de 5 agentes especializados, com controle total de versão e supervisão no VS Code.
+      </p>
+
+      <!-- Pipeline Interativo de Agentes -->
+      <div class="pipeline-container">
+        <div class="pipeline-nav" id="agent-nav">
+          <button class="agent-btn active" data-agent="planner">
+            <span class="step-num">01</span>
+            <span class="agent-title">Planner</span>
+          </button>
+          <button class="agent-btn" data-agent="designer">
+            <span class="step-num">02</span>
+            <span class="agent-title">Designer</span>
+          </button>
+          <button class="agent-btn" data-agent="developer">
+            <span class="step-num">03</span>
+            <span class="agent-title">Developer</span>
+          </button>
+          <button class="agent-btn" data-agent="tester">
+            <span class="step-num">04</span>
+            <span class="agent-title">Tester / QA</span>
+          </button>
+          <button class="agent-btn" data-agent="reviewer">
+            <span class="step-num">05</span>
+            <span class="agent-title">Reviewer</span>
+          </button>
+        </div>
+
+        <!-- Card de Detalhes do Agente Selecionado -->
+        <div class="agent-detail-card" id="agent-detail">
+          <div class="agent-detail-header">
+            <div>
+              <span class="agent-badge" id="agent-badge">Etapa 1 de 5</span>
+              <h3 class="agent-name" id="agent-name">Planner / Analista Estratégico</h3>
+            </div>
+            <span class="agent-icon" id="agent-icon">🧭</span>
+          </div>
+
+          <p class="agent-desc" id="agent-desc">
+            Analisa as informações do cliente, mercado concorrente e define os requisitos técnicos, funcionais e a árvore de navegação (sitemap).
+          </p>
+
+          <div class="agent-artifacts-box">
+            <h4>Artefatos Produzidos em <code>docs/</code>:</h4>
+            <ul id="agent-artifacts">
+              <li><code>analysis.md</code> - Diagnóstico de mercado, público-alvo e oportunidades de conversão.</li>
+              <li><code>requirements.md</code> - Requisitos funcionais (catálogo, simulador) e não-funcionais (SEO, mobile).</li>
+              <li><code>sitemap.md</code> - Estrutura hierárquica e jornada do usuário em formato Mermaid.</li>
+            </ul>
+          </div>
+
+          <div class="agent-meta-footer">
+            <span>Contrato: <code>IAgent.ExecuteAsync()</code></span>
+            <span>Checkpoint: <code>git commit "[SiteFactory] Planner..."</code></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos & Soluções -->
+  <section class="section" id="projetos">
+    <div class="container">
+      <div class="section-badge">Portfólio de Engenharia</div>
+      <h2 class="section-title">Soluções Desenvolvidas</h2>
+      <p class="section-subtitle">Arquiteturas voltadas para eficiência, manutenibilidade e impacto real de negócio.</p>
+
+      <div class="projects-grid">
+        <!-- Projeto 1: SiteFactory -->
+        <div class="project-card featured">
+          <div class="project-badge">Em Destaque</div>
+          <h3>SiteFactory - Orquestrador .NET</h3>
+          <p>
+            Fábrica de software orientada a agentes em C# (.NET 8). Transforma especificações JSON em landing pages completas e validadas por QA com histórico no Git.
+          </p>
+          <div class="project-techs">
+            <span>C#</span>
+            <span>.NET 8</span>
+            <span>Multi-Agents</span>
+            <span>Git Automation</span>
+            <span>HTML5/CSS3/JS</span>
+          </div>
+          <div class="project-links">
+            <a href="#sitefactory" class="link-btn">Ver Pipeline ↗</a>
+          </div>
+        </div>
+
+        <!-- Projeto 2: Clean Architecture Boilerplate -->
+        <div class="project-card">
+          <div class="project-badge">Arquitetura</div>
+          <h3>.NET 8 Clean Architecture Core</h3>
+          <p>
+            Template enterprise com Domain-Driven Design (DDD), CQRS com MediatR, Entity Framework Core e mensageria assíncrona desacoplada.
+          </p>
+          <div class="project-techs">
+            <span>ASP.NET Core</span>
+            <span>CQRS</span>
+            <span>PostgreSQL</span>
+            <span>Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/JoaoAlves0014" target="_blank" rel="noopener noreferrer" class="link-btn">Repositório ↗</a>
+          </div>
+        </div>
+
+        <!-- Projeto 3: AI Prompt & Evaluation Bench -->
+        <div class="project-card">
+          <div class="project-badge">Inteligência Artificial</div>
+          <h3>AI Prompt & Evaluation Bench</h3>
+          <p>
+            Estrutura de avaliação automatizada de prompts e respostas para pipelines de IA, medindo consistência semântica e tempo de execução.
+          </p>
+          <div class="project-techs">
+            <span>C# / Python</span>
+            <span>LLM Evaluation</span>
+            <span>JSON Schema</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/JoaoAlves0014" target="_blank" rel="noopener noreferrer" class="link-btn">Repositório ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades Técnicas -->
+  <section class="section skills-section" id="habilidades">
+    <div class="container">
+      <div class="section-badge">Competências</div>
+      <h2 class="section-title">Habilidades & Tecnologias</h2>
+      <p class="section-subtitle">Ferramental técnico consolidado em práticas de desenvolvimento moderno.</p>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-icon">⚡</div>
+          <h3>Backend & .NET</h3>
+          <ul>
+            <li>C# moderno (.NET 8 / C# 12)</li>
+            <li>Clean Architecture & SOLID</li>
+            <li>State Machines & Pipelines assíncronos</li>
+            <li>APIs RESTful de alta performance</li>
+            <li>Entity Framework Core & SQL</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">🤖</div>
+          <h3>Engenharia de IA & Agentes</h3>
+          <ul>
+            <li>Arquiteturas Multi-Agentes</li>
+            <li>Filosofia Human-in-the-Loop</li>
+            <li>Prompt Engineering estruturado (Markdown)</li>
+            <li>Integrações com LLMs (Gemini, Claude, Codex)</li>
+            <li>Orquestração e validação de artefatos</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">🎨</div>
+          <h3>Frontend & Web</h3>
+          <ul>
+            <li>HTML5 semântico & acessibilidade (WCAG)</li>
+            <li>CSS3 moderno (Tokens `:root`, Grid, Flexbox)</li>
+            <li>JavaScript ES6+ sem dependências inchadas</li>
+            <li>Design Systems e interfaces de alto impacto</li>
+            <li>Performance e Core Web Vitals</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">🛠️</div>
+          <h3>DevOps & Ferramental</h3>
+          <ul>
+            <li>Git automatizado (checkpoints & commits via código)</li>
+            <li>Visual Studio / VS Code avançado</li>
+            <li>GitHub Pages & GitHub Actions</li>
+            <li>Testes automatizados e relatórios de QA</li>
+            <li>Documentação técnica de alto nível</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Mim & Filosofia -->
+  <section class="section about-section" id="sobre">
+    <div class="container about-grid">
+      <div class="about-card">
+        <div class="quote-mark">“</div>
+        <p class="quote-text">
+          A automação via IA não veio para substituir o engenheiro, mas para elevar o nível do jogo: eliminando a digitação manual de código repetitivo e liberando o desenvolvedor para pensar em arquitetura, experiência e estratégia.
+        </p>
+        <span class="quote-author">— João Alves</span>
+      </div>
+
+      <div class="about-bio">
+        <div class="section-badge">Trajetória</div>
+        <h2 class="section-title">Foco em Resultados & Engenharia Confiável</h2>
+        <p>
+          Atuo na criação de produtos e ecossistemas de software com foco em produtividade real. 
+          Combino a solidez do ecossistema .NET com as possibilidades disruptivas dos sistemas multi-agentes.
+        </p>
+        <p>
+          Quando não estou escrevendo código C# ou desenhando esteiras de automação, estou explorando novas técnicas de prompt engineering, aperfeiçoando designs no VS Code ou estudando novas abordagens para testes automatizados.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Contato -->
+  <section class="section contact-section" id="contato">
+    <div class="container">
+      <div class="contact-box">
+        <div class="section-badge">Vamos Conversar</div>
+        <h2 class="section-title">Pronto para criar algo incrível juntos?</h2>
+        <p class="section-subtitle">
+          Disponível para projetos de automação de desenvolvimento, arquitetura de sistemas ou consultoria em agentes de IA.
+        </p>
+
+        <div class="contact-methods">
+          <a href="https://github.com/JoaoAlves0014" target="_blank" rel="noopener noreferrer" class="contact-btn btn-gh">
+            <span>🐙 Ver Perfil no GitHub</span>
+          </a>
+
+          <a href="https://joaoalves0014.github.io" target="_blank" rel="noopener noreferrer" class="contact-btn btn-wa">
+            <span>🌐 Portfólio no GitHub Pages</span>
+          </a>
+
+          <button type="button" class="contact-btn btn-email" id="btn-copy-email">
+            <span id="copy-text">✉️ Copiar E-mail</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 João Alves. Desenvolvido com HTML, CSS e JS puros. Hospedado no GitHub Pages.</p>
+      <p class="footer-sub">Engenharia de Software .NET & Orquestração Multi-Agentes.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/portfolio.js"></script>
+</body>
+</html>
