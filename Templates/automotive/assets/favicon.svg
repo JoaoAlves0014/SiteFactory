@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="22" fill="#0B0F19" />
+  <rect x="2" y="2" width="96" height="96" rx="20" stroke="#1E293B" stroke-width="2" />
+  <!-- Dynamic automotive silhouette / aerodynamic emblem -->
+  <path d="M18 64 C28 64 32 46 44 42 C54 38 68 38 78 46 C84 50 86 64 86 64" stroke="#E5A93C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M30 46 L40 34 L62 34 L72 46 Z" fill="#2563EB" opacity="0.3" stroke="#2563EB" stroke-width="2" stroke-linejoin="round" />
+  <circle cx="34" cy="64" r="8" fill="#0B0F19" stroke="#E5A93C" stroke-width="4" />
+  <circle cx="34" cy="64" r="3" fill="#E5A93C" />
+  <circle cx="70" cy="64" r="8" fill="#0B0F19" stroke="#E5A93C" stroke-width="4" />
+  <circle cx="70" cy="64" r="3" fill="#E5A93C" />
+  <path d="M44 64 L60 64" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" />
+</svg>

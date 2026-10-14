@@ -5,5 +5,15 @@
   "template": "automotivo",
   "nivel": "profissional",
   "objetivo": "Modernizar o site atual",
-  "observacoes": "Design premium, responsivo, integração com WhatsApp para cotação e simulador de financiamento interativo."
+  "observacoes": "Design premium, responsivo, integração com WhatsApp para cotação e simulador de financiamento interativo.",
+  "personalizacao": {
+    "slogan": "Seminovos selecionados com procedência e transparência",
+    "descricao": "Concessionária multimarcas especializada em veículos seminovos periciados, garantia de procedência e atendimento consultivo.",
+    "cidade": "Curitiba - PR",
+    "endereco": "Atendimento presencial sob agendamento e consultoria digital",
+    "telefone": "(41) 3333-0000",
+    "whatsapp": "5541999999999",
+    "corPrimaria": "#E5A93C",
+    "corFundo": "#0B0F19"
+  }
 }

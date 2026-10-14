@@ -1,7 +1,8 @@
 {
   "name": "automotivo-moderno",
   "category": "automotivo",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "description": "Template profissional e responsivo para lojas de veículos e concessionárias de seminovos.",
   "recommendedSections": [
     "header-navbar",
     "hero-banner-showcase",
@@ -9,17 +10,29 @@
     "vehicle-catalog-grid",
     "financing-simulator",
     "trust-differentiators",
-    "customer-reviews",
+    "about-institutional",
     "contact-location",
     "footer-corporate"
   ],
   "defaultColors": {
     "background": "#0B0F19",
     "surface": "#131B2E",
+    "surfaceElevated": "#1E293B",
     "primary": "#E5A93C",
     "primaryHover": "#F5BA4F",
+    "accent": "#2563EB",
     "text": "#F8FAFC",
-    "textMuted": "#94A3B8",
-    "accent": "#2563EB"
+    "textMuted": "#94A3B8"
+  },
+  "defaultPlaceholders": {
+    "CLIENTE": "Jordan Veículos",
+    "SLOGAN": "Seminovos selecionados com procedência e transparência",
+    "DESCRICAO": "Concessionária multimarcas especializada em veículos seminovos periciados, garantia de procedência e atendimento consultivo.",
+    "CIDADE": "Curitiba - PR",
+    "ENDERECO": "Av. Principal dos Automóveis, 1500",
+    "TELEFONE": "(41) 3333-0000",
+    "WHATSAPP_NUMBER": "5541999999999",
+    "COR_PRIMARIA": "#E5A93C",
+    "ANO_ATUAL": "2026"
   }
 }

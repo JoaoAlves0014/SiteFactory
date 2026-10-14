@@ -1,14 +1,17 @@
-# 🏭 SiteFactory - Orquestrador de Sites Multi-Agentes (V1)
+# 🏭 SiteFactory - Orquestrador de Sites Multi-Agentes (V2)
 
 **SiteFactory** é uma fábrica/orquestrador de sites construída em **C# (.NET 8)** que coordena uma esteira de agentes especializados para automatizar de **80% a 90%** do trabalho repetitivo e previsível de criação web, mantendo o desenvolvedor no controle (**Human-in-the-Loop**) através do **VS Code / IDE**.
+
+Na **V2**, o SiteFactory evoluiu para utilizar **templates físicos modulares e reutilizáveis** (HTML5 semântico, CSS3 e JavaScript puro), desacoplados do código compilado e parametrizáveis via arquivo JSON de especificação.
 
 ---
 
 ## 🎯 Filosofia do Projeto
-- **Automação Inteligente:** A IA cuida do trabalho pesado (análise de mercado, arquitetura de informação, design system, código boilerplate semântico, simuladores, testes de QA e relatórios).
-- **Supervisão Humana:** O desenvolvedor supervisiona as alterações no VS Code, faz ajustes criativos finos (fotos reais, telefones oficiais, cores de marca) e toma a decisão final de publicação.
-- **V1 com Agentes Simulados:** Esta versão prova a robustez e o ciclo de vida completo do **Orquestrador**, preparando a arquitetura para plugar futuramente APIs como **Gemini** (análise/pesquisa), **Claude** (design/revisão) e **Codex CLI** (desenvolvimento).
-- **Controle com Git:** Checkpoint automático a cada agente concluído com commits organizados no projeto do cliente.
+- **Automação Inteligente:** A esteira de agentes cuida da análise de requisitos, design system, personalização de templates, geração de código, testes automatizados de QA e relatórios de auditoria.
+- **Templates Físicos Reutilizáveis (V2):** O código frontend reside em arquivos físicos desacoplados dentro de `Templates/`, facilitando manutenção visual e expansão para novos segmentos de mercado.
+- **Personalização via JSON:** Conteúdo, dados de contato, cores do Design System e metatags são injetados automaticamente a partir da especificação do cliente.
+- **Supervisão Humana:** O desenvolvedor supervisiona o código no VS Code, substitui os dados demonstrativos por fotos e telefones reais e toma a decisão final de publicação.
+- **Controle com Git:** Checkpoint automático a cada agente concluído com repositório local e commits organizados no projeto do cliente.
 
 ---
 
@@ -21,11 +24,11 @@ ENTRADA DO CLIENTE (JSON)
         ↓
 [2] DESIGNER UI/UX           → Gera docs/design.md, docs/components.md
         ↓
-[3] DEVELOPER FRONTEND       → Codifica src/index.html, src/styles/main.css, src/scripts/app.js, public/favicon.svg
+[3] DEVELOPER FRONTEND       → Personaliza e gera src/index.html, src/styles/main.css, src/scripts/app.js, public/favicon.svg
         ↓
-[4] TESTER / QA              → Valida integridade e gera tests/site-checks.json, docs/qa-report.md
+[4] TESTER / QA              → Valida integridade e gera tests/site-checks.json, docs/qa-report.md (11/11 testes)
         ↓
-[5] REVIEWER / AUDITOR       → Avalia objetivo, nota executiva e gera docs/review.md + project.json
+[5] REVIEWER / AUDITOR       → Avalia conformidade, nota executiva e gera docs/review.md + project.json
         ↓
 PROJETO FINAL PRONTO PARA SUPERVISÃO NO VS CODE
 ```
@@ -37,34 +40,33 @@ PROJETO FINAL PRONTO PARA SUPERVISÃO NO VS CODE
 ```
 SiteFactory/
 ├── Agents/                      # Contratos e implementação dos agentes especializados
-│   ├── IAgent.cs                # Interface base para agentes simulados ou conectados a LLMs
+│   ├── IAgent.cs                # Interface base para agentes
 │   ├── AgentExecutionResult.cs  # DTO de resultado de execução
 │   ├── Planner/                 # Agente de Análise e Requisitos
 │   ├── Designer/                # Agente de UI/UX e Design System
-│   ├── Developer/               # Agente de Código Frontend (HTML, CSS, JS)
-│   ├── Tester/                  # Agente de Testes e Validações Técnicas
+│   ├── Developer/               # Agente de Integração e Personalização de Templates
+│   ├── Tester/                  # Agente de Testes e Validações Técnicas (QA)
 │   └── Reviewer/                # Agente de Auditoria e Parecer Executivo
-├── Orchestrator/                # Núcleo da fábrica de software
+├── Orchestrator/                # Núcleo do orquestrador
 │   ├── SiteOrchestrator.cs      # Coordenador sequencial do pipeline
 │   ├── PipelineContext.cs       # Contexto e memória compartilhada entre agentes
-│   ├── ProjectSpecification.cs  # Modelo de entrada do cliente
+│   ├── ProjectSpecification.cs  # Modelo de especificação e personalização do cliente
 │   ├── ProjectState.cs          # Máquina de estado e histórico de passos
 │   ├── ProjectPaths.cs          # Gerenciamento de diretórios de projetos
 │   ├── GitCheckpointService.cs  # Checkpoints automáticos via Git
 │   └── ConsoleLogger.cs         # Interface visual de terminal
-├── Projects/                    # Onde os projetos de cada cliente são criados
-│   └── jordan-veiculos/         # Exemplo gerado automaticamente
-│       ├── .agents/             # Logs individuais de cada agente
-│       ├── .git/                # Repositório local com commits de checkpoint
-│       ├── docs/                # Artefatos estratégicos (analysis, design, qa, review...)
-│       ├── public/              # Ativos estáticos e favicon
-│       ├── src/                 # Código fonte da aplicação (index.html, CSS, JS)
-│       ├── tests/               # Resultados estruturados de testes
-│       └── project.json         # Estado, especificações e métricas consolidadas
-├── Prompts/                     # Templates de engenharia de prompt para futuras LLMs
-├── Standards/                   # Diretrizes técnicas (código, design, QA)
-├── Templates/                   # Templates base por segmento
-├── sample-project.json          # Exemplo de entrada do cliente
+├── Templates/                   # Catálogo de templates físicos reutilizáveis
+│   └── automotive/              # Template automotivo moderno (V2)
+│       ├── base-template.json   # Metadados e design tokens padrão
+│       ├── assets/              # Favicon e ativos vetoriais
+│       │   └── favicon.svg
+│       └── src/                 # Código fonte do template
+│           ├── index.html       # Estrutura semântica com placeholders {{...}}
+│           ├── styles/main.css  # Design System em Vanilla CSS (:focus-visible, prefers-reduced-motion)
+│           └── scripts/app.js   # Catálogo interativo, filtros e simulador financeiro
+├── Projects/                    # Onde os projetos gerados são armazenados
+│   └── jordan-veiculos/         # Exemplo oficial gerado e personalizado
+├── sample-project.json          # Exemplo de entrada do cliente com personalização
 ├── SiteFactory.csproj           # Configuração do projeto .NET 8
 └── README.md                    # Documentação do projeto
 ```
@@ -75,11 +77,11 @@ SiteFactory/
 
 ### Pré-requisitos
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- Git (opcional, para checkpoints automáticos)
+- Git (opcional, para checkpoints automáticos locais)
 
 ### 1. Executar com a especificação padrão (`sample-project.json`):
 ```bash
-dotnet run
+dotnet run -- sample-project.json
 ```
 
 ### 2. Executar com especificação personalizada:
@@ -104,40 +106,58 @@ dotnet run --spec meu-cliente.json --no-git
   "template": "automotivo",
   "nivel": "profissional",
   "objetivo": "Modernizar o site atual",
-  "observacoes": "Design premium, responsivo, integração com WhatsApp para cotação e simulador de financiamento interativo."
+  "observacoes": "Design premium, responsivo, integração com WhatsApp e simulador.",
+  "personalizacao": {
+    "slogan": "Seminovos selecionados com procedência e transparência",
+    "descricao": "Concessionária multimarcas especializada em veículos seminovos periciados, garantia de procedência e atendimento consultivo.",
+    "cidade": "Curitiba - PR",
+    "endereco": "Atendimento presencial sob agendamento e consultoria digital",
+    "telefone": "(41) 3333-0000",
+    "whatsapp": "5541999999999",
+    "corPrimaria": "#E5A93C",
+    "corFundo": "#0B0F19"
+  }
 }
 ```
 
+*Todos os campos dentro de `personalizacao` são opcionais e possuem fallbacks seguros baseados no segmento.*
+
 ---
 
-## 🔎 Supervisão no VS Code
+## 🔎 Supervisão no VS Code e Visualização Local
 
-Após a execução, abra a pasta `Projects/jordan-veiculos/` no seu VS Code:
+Após a execução do pipeline, acesse a pasta `Projects/jordan-veiculos/`:
 
-1. **Documentação em `docs/`:**
-   - [`analysis.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/analysis.md): Diagnóstico e persona.
-   - [`requirements.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/requirements.md): Requisitos funcionais e não-funcionais.
-   - [`sitemap.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/sitemap.md): Arquitetura das seções.
-   - [`design.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/design.md): Design tokens e paleta Dark Luxury.
-   - [`components.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/components.md): Anatomia de cada componente.
-   - [`qa-report.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/qa-report.md): Checklist e status dos testes (10/10 aprovados).
-   - [`review.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/review.md): Parecer executivo, nota e itens recomendados para supervisão humana.
-
-2. **Visualizar no Navegador:**
+1. **Visualizar no Navegador:**
    - Abra diretamente no navegador o arquivo:
      `Projects/jordan-veiculos/src/index.html`
-   - O site possui catálogo interativo com filtros por categoria, busca em tempo real, simulador dinâmico de parcelas e integração com WhatsApp.
+   - O site opera de forma autônoma sem necessidade de servidor backend (CSS puro, JS vanilla, ícones vetoriais embutidos).
 
-3. **Histórico Git:**
-   - Veja os commits de cada agente:
-     ```bash
-     git -C Projects/jordan-veiculos log --oneline
-     ```
+2. **Funcionalidades do Template Automotivo (V2):**
+   - Catálogo interativo com filtros por categoria (*SUVs, Sedans, Hatches, Pick-ups*) e busca em tempo real.
+   - Simulador demonstrativo de financiamento com cálculo de parcelas (Tabela Price) e envio dinâmico para WhatsApp.
+   - Design responsivo para Desktop (1440px), Tablet (768px) e Mobile (390px).
+   - Acessibilidade aprimorada com `:focus-visible` e `@media (prefers-reduced-motion: reduce)`.
+
+3. **Documentação Técnica em `docs/`:**
+   - [`analysis.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/analysis.md): Diagnóstico estratégico.
+   - [`requirements.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/requirements.md): Requisitos funcionais e técnicos.
+   - [`sitemap.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/sitemap.md): Arquitetura das seções.
+   - [`design.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/design.md): Tokens e paleta Dark Luxury.
+   - [`development.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/development.md): Documentação técnica e origem do template.
+   - [`qa-report.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/qa-report.md): Relatório de QA (11/11 testes aprovados).
+   - [`review.md`](file:///c:/Users/joaop/OneDrive/Desktop/SiteFactory/Projects/jordan-veiculos/docs/review.md): Parecer executivo da auditoria final.
 
 ---
 
-## 🔮 Próximos Passos (Evolução Futura)
-- Conexão da interface `IAgent` com **Gemini API** para agentes de pesquisa/análise.
-- Conexão com **Claude API** para refino criativo de design e revisão crítica.
-- Integração de comandos CLI (Codex) para geração incremental de componentes.
-- Suporte a rollback para checkpoints anteriores via comando do orquestrador.
+## ⚠️ Limitações Conhecidas (V2)
+
+- **Dados Comerciais Demonstrativos:** Os telefones, endereços, fotos vetoriais e veículos do catálogo de exemplo são fictícios e ilustrativos. Devem ser substituídos pelos dados comerciais reais do cliente antes da publicação definitiva.
+- **Inspeção Visual:** A validação técnica, semântica e de QA é 100% automatizada pelo `TesterAgent`. A inspeção visual final de layout deve ser revisada pelo desenvolvedor no navegador.
+
+---
+
+## 🔮 Próximos Passos (Evolução Futura / V3)
+- Conexão de agentes com APIs de LLMs (**Gemini**, **Claude**, **Codex**).
+- Expansão do catálogo de templates para outros segmentos (médico, advocacia, imobiliário, restaurantes).
+- Integração de CMS leve / headless para edição de estoque sem alterar código.

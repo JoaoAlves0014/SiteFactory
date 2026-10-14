@@ -1,228 +1,308 @@
-// SiteFactory - Aplicação Interativa do Cliente
-// Cliente: Jordan Veículos (automotivo)
+// Identificador de WhatsApp para atendimento
+const WHATSAPP_NUMBER = "5541999999999";
 
-const vehiclesData = [
+/**
+ * Retorna link seguro para o WhatsApp ou âncora para contato se o número não estiver configurado
+ */
+function getWhatsAppLink(message) {
+  if (WHATSAPP_NUMBER && WHATSAPP_NUMBER.length >= 10) {
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  }
+  return "#contato";
+}
+
+// Dados demonstrativos de veículos claramente identificados
+const demonstrativeVehicles = [
   {
     id: 1,
-    title: 'BMW 320i M Sport 2.0 Turbo',
-    category: 'sedan',
-    year: '2024',
-    km: '14.200 km',
-    gear: 'Automático',
-    price: 319900,
-    tag: 'Único Dono',
-    color: '#2563EB'
+    name: "SUV Vision 1.6 Flex Turbo",
+    category: "suv",
+    year: 2023,
+    mileage: "24.500 km",
+    fuel: "Flex",
+    transmission: "Automático",
+    price: 98000,
+    tag: "Destaque"
   },
   {
     id: 2,
-    title: 'Jeep Compass Limited T270',
-    category: 'suv',
-    year: '2023',
-    km: '28.500 km',
-    gear: 'Automático',
-    price: 169900,
-    tag: 'Garantia de Fábrica',
-    color: '#059669'
+    name: "Sedan Elegance 2.0 Turbo",
+    category: "sedan",
+    year: 2022,
+    mileage: "36.200 km",
+    fuel: "Gasolina",
+    transmission: "Automático",
+    price: 125000,
+    tag: "Laudo 100%"
   },
   {
     id: 3,
-    title: 'Toyota Hilux SRX 2.8 4x4 Diesel',
-    category: 'pickup',
-    year: '2023',
-    km: '34.000 km',
-    gear: 'Automático',
-    price: 289900,
-    tag: 'Laudo 100% Aprovado',
-    color: '#DC2626'
+    name: "Hatch Sport 1.0 Turbo TSI",
+    category: "hatch",
+    year: 2023,
+    mileage: "18.900 km",
+    fuel: "Flex",
+    transmission: "Manual",
+    price: 76000,
+    tag: "Oportunidade"
   },
   {
     id: 4,
-    title: 'Porsche Macan 2.0 Turbo PDK',
-    category: 'suv',
-    year: '2022',
-    km: '21.000 km',
-    gear: 'Automático',
-    price: 459000,
-    tag: 'Blindado Nível III-A',
-    color: '#7C3AED'
+    name: "Pick-up Robust 2.8 4x4 Diesel",
+    category: "pickup",
+    year: 2021,
+    mileage: "52.000 km",
+    fuel: "Diesel",
+    transmission: "Automático",
+    price: 165000,
+    tag: "Tração 4x4"
   },
   {
     id: 5,
-    title: 'Honda Civic Touring 1.5 Turbo',
-    category: 'sedan',
-    year: '2021',
-    km: '42.000 km',
-    gear: 'Automático',
-    price: 142900,
-    tag: 'IPVA 2026 Pago',
-    color: '#D97706'
+    name: "SUV Premium Titanium Hybrid",
+    category: "suv",
+    year: 2024,
+    mileage: "8.400 km",
+    fuel: "Híbrido",
+    transmission: "Automático",
+    price: 148000,
+    tag: "Seminovo Único"
   },
   {
     id: 6,
-    title: 'Volkswagen Golf GTI 2.0 TSI',
-    category: 'hatch',
-    year: '2020',
-    km: '51.000 km',
-    gear: 'DSG Automático',
-    price: 185000,
-    tag: 'Revisões na Concessionária',
-    color: '#E11D48'
+    name: "Hatch Confort 1.0 Flex",
+    category: "hatch",
+    year: 2022,
+    mileage: "29.800 km",
+    fuel: "Flex",
+    transmission: "Manual",
+    price: 68000,
+    tag: "Econômico"
   }
 ];
 
-const clientName = 'Jordan Veículos';
-let activeCategory = 'todos';
-let searchQuery = '';
-let selectedMonths = 48;
+// Estado da aplicação
+let activeCategory = "todos";
+let searchTerm = "";
+let selectedTermMonths = 48;
 
-function formatCurrency(val) {
-  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(val);
+/**
+ * Formata valores numéricos para a moeda brasileira (BRL)
+ */
+function formatCurrency(value) {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  }).format(value);
 }
 
-function renderVehicles() {
-  const grid = document.getElementById('vehicle-grid');
-  if (!grid) return;
+/**
+ * Gera ilustração vetorial (SVG) limpa para os cards de veículos
+ */
+function getVehicleSvg(category) {
+  return `
+    <svg viewBox="0 0 200 100" class="card-car-svg" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 75%; height: auto; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));">
+      <path d="M20 70 C40 70 50 50 70 45 C90 40 120 40 140 50 C155 58 170 70 180 70" stroke="#E5A93C" stroke-width="3" stroke-linecap="round" />
+      <path d="M60 48 L80 28 L120 28 L138 48 Z" fill="rgba(37, 99, 235, 0.25)" stroke="#2563EB" stroke-width="1.5" />
+      <circle cx="50" cy="70" r="12" fill="#111827" stroke="#E5A93C" stroke-width="3" />
+      <circle cx="50" cy="70" r="4" fill="#E5A93C" />
+      <circle cx="150" cy="70" r="12" fill="#111827" stroke="#E5A93C" stroke-width="3" />
+      <circle cx="150" cy="70" r="4" fill="#E5A93C" />
+      <line x1="65" y1="70" x2="135" y2="70" stroke="#475569" stroke-width="2" />
+    </svg>
+  `;
+}
 
-  const filtered = vehiclesData.filter(v => {
-    const matchesCategory = activeCategory === 'todos' || v.category === activeCategory;
-    const matchesSearch = v.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          v.year.includes(searchQuery);
-    return matchesCategory && matchesSearch;
+/**
+ * Renderiza a grade de veículos filtrada (Requisito TesterAgent)
+ */
+function renderVehicles(vehicles = demonstrativeVehicles) {
+  const container = document.getElementById("vehicle-grid");
+  if (!container) return;
+
+  const filtered = vehicles.filter(v => {
+    const matchCategory = activeCategory === "todos" || v.category === activeCategory;
+    const matchSearch = searchTerm === "" || 
+      v.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      v.year.toString().includes(searchTerm);
+    return matchCategory && matchSearch;
   });
 
   if (filtered.length === 0) {
-    grid.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: var(--text-secondary);">
-        <h3>Nenhum veículo encontrado</h3>
-        <p>Tente ajustar os filtros ou termo de busca.</p>
-      </div>`;
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: var(--bg-surface-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <p style="font-size: 1.1rem; color: var(--text-secondary);">Nenhum veículo encontrado para a busca selecionada.</p>
+        <button onclick="resetFilters()" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">Limpar Filtros</button>
+      </div>
+    `;
     return;
   }
 
-  grid.innerHTML = filtered.map(v => {
-    const estimatedEntry = v.price * 0.3;
-    const estimatedInstallment = (v.price - estimatedEntry) * 1.35 / 48;
-    const encodedMsg = encodeURIComponent(`Olá! Tenho interesse no veículo ${v.title} (${formatCurrency(v.price)}) anunciado no site da ${clientName}.`);
-
-    return `
-      <article class="vehicle-card" data-id="${v.id}">
-        <div class="card-img-wrapper">
-          <span class="card-tag">${v.tag}</span>
-          <svg viewBox="0 0 240 120" width="200" height="100" fill="none">
-            <rect x="10" y="10" width="220" height="100" rx="12" fill="rgba(255,255,255,0.03)" />
-            <path d="M40 75 C55 75 65 70 80 55 L115 35 C130 30 160 30 175 40 L195 55 C210 60 220 70 220 75 L225 85 C225 90 220 92 215 92 L40 92 Z" fill="${v.color}" opacity="0.9" />
-            <circle cx="75" cy="92" r="12" fill="#0B0F19" stroke="#94A3B8" stroke-width="2" />
-            <circle cx="180" cy="92" r="12" fill="#0B0F19" stroke="#94A3B8" stroke-width="2" />
-          </svg>
+  container.innerHTML = filtered.map(v => `
+    <article class="vehicle-card" data-category="${v.category}">
+      <div class="vehicle-card-visual">
+        <span class="vehicle-tag">${v.tag}</span>
+        ${getVehicleSvg(v.category)}
+      </div>
+      <div class="vehicle-body">
+        <h3 class="vehicle-name">${v.name}</h3>
+        <div class="vehicle-specs">
+          <span>📅 ${v.year}</span>
+          <span>🛣️ ${v.mileage}</span>
+          <span>🕹️ ${v.transmission}</span>
         </div>
-        <div class="card-body">
-          <h3>${v.title}</h3>
-          <div class="vehicle-tags">
-            <span>📅 ${v.year}</span>
-            <span>🛣️ ${v.km}</span>
-            <span>⚙️ ${v.gear}</span>
+        <div class="vehicle-price-box">
+          <div>
+            <span class="price-label">Preço Sugerido (Demonstrativo):</span>
+            <span class="price-val">${formatCurrency(v.price)}</span>
           </div>
-          <div class="vehicle-pricing">
-            <div>
-              <div class="price-main">${formatCurrency(v.price)}</div>
-              <div class="price-installment">Entrada ${formatCurrency(estimatedEntry)} + 48x de ${formatCurrency(estimatedInstallment)}</div>
-            </div>
-          </div>
-          <a href="https://wa.me/5511999999999?text=${encodedMsg}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
-            Tenho Interesse
+          <a href="${getWhatsAppLink(`Olá! Tenho interesse no veículo demonstrativo ${v.name} (R$ ${v.price}).`)}" 
+             ${WHATSAPP_NUMBER && WHATSAPP_NUMBER.length >= 10 ? 'target="_blank" rel="noopener noreferrer"' : ''}
+             class="btn btn-primary btn-sm" aria-label="Consultar veículo ${v.name} pelo WhatsApp">
+            Consultar
           </a>
         </div>
-      </article>
-    `;
-  }).join('');
+      </div>
+    </article>
+  `).join("");
 }
 
-function initFilters() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeCategory = btn.getAttribute('data-category');
-      renderVehicles();
-    });
+/**
+ * Limpa os filtros de busca
+ */
+function resetFilters() {
+  activeCategory = "todos";
+  searchTerm = "";
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) searchInput.value = "";
+  
+  document.querySelectorAll(".category-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.category === "todos");
   });
-
-  const searchInput = document.getElementById('search-input');
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value.trim();
-      renderVehicles();
-    });
-  }
+  
+  renderVehicles();
 }
 
+/**
+ * Inicializa e calcula o simulador financeiro (Requisito TesterAgent)
+ */
 function initSimulator() {
-  const carSelect = document.getElementById('sim-car-select');
-  const entryRange = document.getElementById('sim-entry-range');
-  const entryDisplay = document.getElementById('entry-display');
-  const installmentResult = document.getElementById('installment-result');
-  const instBtns = document.querySelectorAll('.inst-btn');
-  const btnSend = document.getElementById('btn-send-simulation');
+  const vehicleSelect = document.getElementById("sim-vehicle-select");
+  const entryInput = document.getElementById("sim-entry-input");
+  const monthlyDisplay = document.getElementById("sim-monthly-installment");
+  const totalDisplay = document.getElementById("sim-total-display");
+  const entryDisplay = document.getElementById("sim-entry-display");
+  const balanceDisplay = document.getElementById("sim-balance-display");
+  const termDisplay = document.getElementById("sim-term-display");
+  const sendWhatsAppBtn = document.getElementById("sim-send-whatsapp");
+  const termButtons = document.querySelectorAll(".term-btn");
 
-  if (!carSelect || !entryRange) return;
+  if (!vehicleSelect || !entryInput || !monthlyDisplay) return;
 
-  // Popula opções de veículos
-  carSelect.innerHTML = vehiclesData.map(v => 
-    `<option value="${v.price}" data-title="${v.title}">${v.title} - ${formatCurrency(v.price)}</option>`
-  ).join('');
+  function calculate() {
+    const totalValue = parseFloat(vehicleSelect.value) || 0;
+    let entryValue = parseFloat(entryInput.value) || 0;
 
-  function updateCalculation() {
-    const carPrice = parseFloat(carSelect.value) || 200000;
-    const maxEntry = Math.round(carPrice * 0.85);
-    entryRange.max = maxEntry;
-    
-    let entryVal = parseFloat(entryRange.value);
-    if (entryVal > maxEntry) {
-      entryVal = maxEntry;
-      entryRange.value = maxEntry;
+    // Regras de validação do valor de entrada
+    if (entryValue < 0) entryValue = 0;
+    if (entryValue > totalValue * 0.9) entryValue = totalValue * 0.9;
+
+    const balance = totalValue - entryValue;
+    const months = selectedTermMonths;
+
+    // Taxa ilustrativa de 1.49% a.m. (cálculo pela Tabela Price para fins puramente demonstrativos)
+    const monthlyRate = 0.0149;
+    let monthlyInstallment = 0;
+
+    if (balance > 0 && months > 0) {
+      monthlyInstallment = balance * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
     }
 
-    entryDisplay.textContent = formatCurrency(entryVal);
+    // Atualiza a interface
+    totalDisplay.textContent = formatCurrency(totalValue);
+    entryDisplay.textContent = formatCurrency(entryValue);
+    balanceDisplay.textContent = formatCurrency(balance);
+    termDisplay.textContent = `${months} meses`;
+    monthlyDisplay.textContent = formatCurrency(monthlyInstallment);
 
-    const financedAmount = Math.max(0, carPrice - entryVal);
-    // Coeficiente de juros simples aproximado de mercado (1.2% ao mês)
-    const monthlyRate = 0.0125;
-    const factor = (monthlyRate * Math.pow(1 + monthlyRate, selectedMonths)) / (Math.pow(1 + monthlyRate, selectedMonths) - 1);
-    const monthlyInstallment = financedAmount * factor;
-
-    installmentResult.textContent = `${formatCurrency(monthlyInstallment)} / mês`;
+    // Atualiza botão do WhatsApp com link dinâmico wa.me
+    const selectedOptionText = vehicleSelect.options[vehicleSelect.selectedIndex].text.split(" - ")[0];
+    const message = `Olá! Realizei uma simulação demonstrativa pelo site:\n- Veículo: ${selectedOptionText}\n- Valor: ${formatCurrency(totalValue)}\n- Entrada: ${formatCurrency(entryValue)}\n- Prazo: ${months}x de aprox. ${formatCurrency(monthlyInstallment)}.\nGostaria de mais informações!`;
+    
+    if (sendWhatsAppBtn) {
+      sendWhatsAppBtn.href = getWhatsAppLink(message);
+      if (WHATSAPP_NUMBER && WHATSAPP_NUMBER.length >= 10) {
+        sendWhatsAppBtn.setAttribute("target", "_blank");
+        sendWhatsAppBtn.setAttribute("rel", "noopener noreferrer");
+      } else {
+        sendWhatsAppBtn.removeAttribute("target");
+        sendWhatsAppBtn.removeAttribute("rel");
+      }
+    }
   }
 
-  carSelect.addEventListener('change', updateCalculation);
-  entryRange.addEventListener('input', updateCalculation);
+  // Event Listeners dos Controles
+  vehicleSelect.addEventListener("change", calculate);
+  entryInput.addEventListener("input", calculate);
 
-  instBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      instBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      selectedMonths = parseInt(btn.getAttribute('data-months'), 10);
-      updateCalculation();
+  termButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      termButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedTermMonths = parseInt(btn.dataset.months, 10);
+      calculate();
     });
   });
 
-  if (btnSend) {
-    btnSend.addEventListener('click', () => {
-      const selectedOption = carSelect.options[carSelect.selectedIndex];
-      const carName = selectedOption.getAttribute('data-title');
-      const entryVal = entryDisplay.textContent;
-      const installmentVal = installmentResult.textContent;
-      
-      const text = encodeURIComponent(`Olá! Fiz uma simulação no site da ${clientName} para o veículo ${carName}:\n- Entrada: ${entryVal}\n- Prazo: ${selectedMonths}x\n- Parcela estimada: ${installmentVal}\nGostaria de consultar as condições de aprovação.`);
-      window.open(`https://wa.me/5511999999999?text=${text}`, '_blank');
+  // Executa o primeiro cálculo
+  calculate();
+}
+
+/**
+ * Inicialização dos Módulos
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Renderiza catálogo inicial
+  renderVehicles();
+
+  // 2. Inicializa simulador
+  initSimulator();
+
+  // 3. Configura abas de categoria
+  document.querySelectorAll(".category-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeCategory = btn.dataset.category;
+      renderVehicles();
+    });
+  });
+
+  // 4. Configura campo de busca
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchTerm = e.target.value.trim();
+      renderVehicles();
     });
   }
 
-  updateCalculation();
-}
+  // 5. Menu Mobile
+  const menuToggle = document.getElementById("mobile-menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+      const expanded = navMenu.classList.contains("open");
+      menuToggle.setAttribute("aria-expanded", expanded);
+    });
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderVehicles();
-  initFilters();
-  initSimulator();
+    // Fecha o menu ao clicar em um link
+    navMenu.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", false);
+      });
+    });
+  }
 });

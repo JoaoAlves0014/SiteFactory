@@ -1,34 +1,38 @@
 # Documentação Técnica de Desenvolvimento Frontend
 **Projeto:** Jordan Veículos  
 **Segmento:** automotivo  
-**Data da Implementação:** 14/10/2026 16:23:40 UTC  
+**Template Base:** automotivo  
+**Origem do Template:** `C:\Users\joaop\OneDrive\Desktop\SiteFactory\Templates\automotive`  
+**Data da Implementação:** 14/10/2026 17:11:35 UTC  
 
 ---
 
 ## 1. Arquitetura da Solução
-A solução foi desenvolvida adotando a filosofia de **zero dependências externas pesadas**, garantindo performance máxima, facilidade de manutenção e tempo de carregamento inferior a 1 segundo.
+A solução foi gerada e personalizada automaticamente através do **SiteFactory V2**, utilizando o template físico e os dados de configuração definidos em JSON.
 
-### Estrutura de Arquivos Implementada:
-- `src/index.html`: Marcação semântica com metatags Open Graph, SEO, acessibilidade e IDs exclusivos em todos os elementos interativos.
-- `src/styles/main.css`: Sistema de design em CSS puro baseado em custom properties (`:root`), flexbox, CSS Grid e microinterações com glassmorphism.
-- `src/scripts/app.js`: Lógica funcional em ES6+ para catálogo com filtro dinâmico de categorias (SUVs, Sedans, Pick-ups, Hatchbacks), busca em tempo real e simulador de financiamento com taxas de mercado e encaminhamento dinâmico para WhatsApp.
-- `public/favicon.svg`: Identidade visual vetorial personalizada.
+### Parâmetros de Personalização Aplicados:
+- **Slogan:** Seminovos selecionados com procedência e transparência
+- **Cidade:** Curitiba - PR
+- **Telefone:** (41) 3333-0000
+- **WhatsApp:** 5541999999999
+- **Cor Primária:** #E5A93C
+- **Cor de Fundo:** #0B0F19
+
+### Estrutura de Arquivos Gerada:
+- `src/index.html`: Marcação semântica com metatags personalizadas, hierarquia acessível e IDs exclusivos.
+- `src/styles/main.css`: Design System moderno em Vanilla CSS fundamentado em custom properties (`:root`), paleta customizável e responsividade.
+- `src/scripts/app.js`: Lógica funcional em Vanilla JS (ES6+) para catálogo de veículos, filtros dinâmicos e simulador de parcelas.
+- `public/favicon.svg`: Identidade visual vetorial da marca.
 
 ---
 
 ## 2. Componentes e Seletores Implementados
-- `#navbar`: Cabeçalho sticky com efeito backdrop blur e botão de contato rápido.
-- `#home`: Hero banner com chamada de impacto, estatísticas de autoridade e CTAs.
+- `#navbar`: Cabeçalho sticky com navegação e botão de contato rápido.
+- `#home`: Hero banner com apresentação da empresa e métricas de autoridade.
 - `#filter-bar`: Abas de categoria e campo de busca interativa.
 - `#vehicle-grid`: Grade de renderização dinâmica com cards de veículos.
-- `#simulador`: Calculadora interativa de parcelas com seleção de veículo, entrada e prazo (24x a 60x).
-- `#diferenciais`: Selos de garantia, laudo cautelar e procedência.
-- `#depoimentos`: Prova social com avaliações verificadas de clientes.
+- `#simulador`: Calculadora interativa de parcelas com cálculo demonstrativo e encaminhamento para WhatsApp.
+- `#diferenciais`: Pilares de confiança (perícia cautelar, procedência, garantia).
+- `#sobre`: Apresentação institucional da loja.
 - `#contato`: Endereço físico, horários e acionamento direto do WhatsApp comercial.
-
----
-
-## 3. Instruções de Manutenção e Customização no VS Code
-1. Para alterar veículos do catálogo, modifique a constante `vehiclesData` em `src/scripts/app.js`.
-2. Para alterar o telefone de WhatsApp de destino, substitua o número `5511999999999` em `src/index.html` e `src/scripts/app.js`.
-3. Para ajustar cores do tema, modifique as variáveis no bloco `:root` em `src/styles/main.css`.
+- `#footer`: Rodapé corporativo com direitos autorais e avisos legais.

@@ -10,8 +10,8 @@
     "Reviewer"
   ],
   "FailedSteps": [],
-  "CreatedAt": "2026-10-14T16:23:38.9804595Z",
-  "UpdatedAt": "2026-10-14T16:23:41.9865326Z",
+  "CreatedAt": "2026-10-14T17:11:34.1612115Z",
+  "UpdatedAt": "2026-10-14T17:11:37.0121852Z",
   "Specification": {
     "cliente": "Jordan Ve\u00EDculos",
     "urlAtual": "https://www.jordanveiculos.com",
@@ -19,15 +19,25 @@
     "template": "automotivo",
     "nivel": "profissional",
     "objetivo": "Modernizar o site atual",
-    "observacoes": "Design premium, responsivo, integra\u00E7\u00E3o com WhatsApp para cota\u00E7\u00E3o e simulador de financiamento interativo."
+    "observacoes": "Design premium, responsivo, integra\u00E7\u00E3o com WhatsApp para cota\u00E7\u00E3o e simulador de financiamento interativo.",
+    "personalizacao": {
+      "slogan": "Seminovos selecionados com proced\u00EAncia e transpar\u00EAncia",
+      "descricao": "Concession\u00E1ria multimarcas especializada em ve\u00EDculos seminovos periciados, garantia de proced\u00EAncia e atendimento consultivo.",
+      "cidade": "Curitiba - PR",
+      "endereco": "Atendimento presencial sob agendamento e consultoria digital",
+      "telefone": "(41) 3333-0000",
+      "whatsapp": "5541999999999",
+      "corPrimaria": "#E5A93C",
+      "corFundo": "#0B0F19"
+    }
   },
   "StepHistory": [
     {
       "AgentName": "Planner",
       "Step": "Planejamento e An\u00E1lise Estrat\u00E9gica",
       "Status": "Success",
-      "Timestamp": "2026-10-14T16:23:39.5862939Z",
-      "DurationSeconds": 0.3291758,
+      "Timestamp": "2026-10-14T17:11:34.7369265Z",
+      "DurationSeconds": 0.3205625,
       "ProducedFiles": [
         "docs/analysis.md",
         "docs/requirements.md",
@@ -39,8 +49,8 @@
       "AgentName": "Designer",
       "Step": "Design UI/UX e Design System",
       "Status": "Success",
-      "Timestamp": "2026-10-14T16:23:40.1392504Z",
-      "DurationSeconds": 0.3063272,
+      "Timestamp": "2026-10-14T17:11:35.3364962Z",
+      "DurationSeconds": 0.3231053,
       "ProducedFiles": [
         "docs/design.md",
         "docs/components.md"
@@ -51,8 +61,8 @@
       "AgentName": "Developer",
       "Step": "Desenvolvimento Frontend e Arquitetura Web",
       "Status": "Success",
-      "Timestamp": "2026-10-14T16:23:40.7218502Z",
-      "DurationSeconds": 0.3672017,
+      "Timestamp": "2026-10-14T17:11:35.8091376Z",
+      "DurationSeconds": 0.2176404,
       "ProducedFiles": [
         "public/favicon.svg",
         "src/index.html",
@@ -60,14 +70,14 @@
         "src/scripts/app.js",
         "docs/development.md"
       ],
-      "Notes": "Desenvolvimento frontend conclu\u00EDdo: index.html, main.css, app.js, development.md e favicon.svg gerados."
+      "Notes": "Desenvolvimento frontend conclu\u00EDdo: site personalizado com base no JSON e template \u0027automotivo\u0027."
     },
     {
       "AgentName": "Tester",
       "Step": "Garantia de Qualidade (QA) \u0026 Valida\u00E7\u00F5es T\u00E9cnicas",
       "Status": "Success",
-      "Timestamp": "2026-10-14T16:23:41.3030795Z",
-      "DurationSeconds": 0.323545,
+      "Timestamp": "2026-10-14T17:11:36.439195Z",
+      "DurationSeconds": 0.3466556,
       "ProducedFiles": [
         "tests/site-checks.json",
         "docs/qa-report.md"
@@ -78,8 +88,8 @@
       "AgentName": "Reviewer",
       "Step": "Revis\u00E3o Executiva \u0026 Auditoria Final",
       "Status": "Success",
-      "Timestamp": "2026-10-14T16:23:41.9865203Z",
-      "DurationSeconds": 0.3056863,
+      "Timestamp": "2026-10-14T17:11:37.0121732Z",
+      "DurationSeconds": 0.3107224,
       "ProducedFiles": [
         "docs/review.md",
         "C:\\Users\\joaop\\OneDrive\\Desktop\\SiteFactory\\Projects\\jordan-veiculos\\project.json"
@@ -107,6 +117,6 @@
     "QualityScore": "9,8",
     "AuditedBy": "ReviewerAgent",
     "HumanSupervisionRequired": "true",
-    "TotalPipelineDurationSeconds": "3,27"
+    "TotalPipelineDurationSeconds": "3,12"
   }
 }
